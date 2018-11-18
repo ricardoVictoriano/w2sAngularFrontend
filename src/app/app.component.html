@@ -1,39 +1,204 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<div id="page ">
+  <div class="va-bar-menu nav-bar">
+    <nav id="navigationHeight" class="navbar navbar-expand-lg navbar-light bg-light shadow p-3 mb-5 bg-white rounded">
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <img src="../assets/imgs/w2slogo.png" width="40" height="40" class="d-inline-block align-top img-logo" alt="">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a href="" id="nav-button-geo" class="nav-button">Geo</a>
+          </li>
+          <li class="nav-item">
+            <a href="" class="nav-button">Scada</a>
+          </li>
+          <li class="nav-item">
+            <a href="" class="nav-button">Dashboards</a>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="contact">Contact</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <div class="left-side-menu shadow">
+
+    <ul class="itens">
+      <ul>
+        <li class="item">
+          <a href="" class="water-assets-item">Water Assets</a>
+        </li>
+        <li class="item">
+          <a href="" class="pumping-stations-item">Pumping Stations</a>
+        </li>
+        <li class="item">
+          <a href="" class="water-assets-item">Reservoirs</a>
+        </li>
+      </ul>
+
     </ul>
   </div>
-</nav>
-<div class="container">
-  <router-outlet></router-outlet>
+
+  <div class="map-panel shadow">
+
+  </div>
+
+  <div class="alerts-panel shadow">
+
+    <div class="alarms-panel">
+      <h1 id="alarms-h1">ALARMS</h1>
+
+      <table class="alarms-table alerts-table shadow">
+        <thead class="tables-header">
+          <tr>
+            <th scope="col">Timestamp</th>
+            <th scope="col">Asset</th>
+            <th scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Mark</td>
+            <td>Otto</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Mark</td>
+            <td>Otto</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Mark</td>
+            <td>Otto</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Mark</td>
+            <td>Otto</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Mark</td>
+            <td>Otto</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Mark</td>
+            <td>Otto</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    <div class="warnings-panel">
+      <h1 id="warnings-h1">WARNINGS</h1>
+
+      <table class="warnings-table alerts-table shadow">
+        <thead class="tables-header">
+          <tr>
+            <th scope="col">Timestamp</th>
+            <th scope="col">Asset</th>
+            <th scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Mark</td>
+            <td>Otto</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Mark</td>
+            <td>Otto</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Mark</td>
+            <td>Otto</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Mark</td>
+            <td>Otto</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Mark</td>
+            <td>Otto</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Mark</td>
+            <td>Otto</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="details-panel alets-panel">
+      <h1 id="details-h1">DETAILS</h1>
+
+      <table class="details-table">
+        <thead class="tables-header">
+          <tr>
+            <th class="details-header" scope="col">ID</th>
+            <th class="details-header" scope="col">Asset</th>
+            <th class="details-header" scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Mark</td>
+            <td>Otto</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Mark</td>
+            <td>Otto</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Mark</td>
+            <td>Otto</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Mark</td>
+            <td>Otto</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Mark</td>
+            <td>Otto</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Mark</td>
+            <td>Otto</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+
+  </div>
+
+  <div class="footer-panel">
+      <img src="../assets/imgs/logo.png" class="bottom-logo" alt="">
+
+  </div>
+
+
+
+
 </div>
+
+
+
+
 
 
 <!-- <h1 id="labelNome" [ngStyle]="{color: radioStatus ? 'green': 'red'}">{{firstName}}</h1>

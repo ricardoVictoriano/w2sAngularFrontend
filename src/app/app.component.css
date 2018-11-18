@@ -1,64 +1,182 @@
-#botao {
+
+#page{
+	width:100%;
+    text-align:center;
+}
+
+#navigationHeight{
+	height: 50px;
+}
+
+#navbarTogglerDemo01{
 	
-	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
-	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
-	box-shadow:inset 0px 1px 0px 0px #ffffff;
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf));
-	background:-moz-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
-	background:-webkit-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
-	background:-o-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
-	background:-ms-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
-	background:linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf',GradientType=0);
-	background-color:#ededed;
-	-moz-border-radius:6px;
-	-webkit-border-radius:6px;
-	border-radius:6px;
-	border:1px solid #dcdcdc;
-	display:inline-block;
+	z-index: 1000;
+	
+}
+
+.img-logo:hover{
 	cursor: pointer;
-	color:#777777;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:6px 24px;
+}
+
+.nav-button{
+	color: #3EB1E6;
+	border: #3EB1E6 solid 1px;
+	background: white;
+	cursor: pointer;
+	border-radius: 50px;
+	padding: 3px 20px 5px 20px;
+	margin-left: 20px;
+	font-family: Candara;
+}
+
+.nav-button:hover{
+	background: #3EB1E6;
+	color: white;
 	text-decoration:none;
-	text-shadow:0px 1px 0px #ffffff;
-
-}
-#botao:hover {
-    
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed));
-	background:-moz-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
-	background:-webkit-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
-	background:-o-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
-	background:-ms-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
-	background:linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed',GradientType=0);
-	background-color:#dfdfdf;
-
-}
-#botao:active {
-    position:relative;
-	top:1px;
 }
 
-.box{
-    height: 40px;
-    width: 200px;
-    background: black
+#nav-button-geo{
+	margin-left: 50px;
 }
 
-#labelNome{
-	font-size: 30px;
+.left-side-menu{
+	text-align: lef;
+	position: fixed;
+	/* height: 80%; */
+	width: 15%;
+	/* background: yellowgreen; */
+	top: 10%;
+	bottom: 10%;
+}
+
+.map-panel{
+	
+	position: fixed;
+	width: 61%;
+    top: 10%;
+	bottom: 10%;
+	left: 15.5%;
+	/* background:blueviolet; */
+
+}
+html, body {
+	height: 100%;
+  }
+
+.itens{
+	text-align: left;
+	left:75;
+	position: absolute;
+	top: 0px;
+}
+
+.item{
+	list-style-type: none;
+	/* left: 75%; */
+	/* position: absolute  */
+}
+
+.alerts-panel{
+	text-align: center;
+	position: fixed;
+	right: 0;
+	width: 23%;
+	/* background: #3EB1E6; */
+	top: 10%;
+	bottom: 10%;
+	z-index: 1;
+}
+
+
+.footer-panel{
+	position: fixed;
+	bottom: 0;
+	/* background: red; */
+	width: 100%;
+	top: 90.5%;
+
+}
+
+
+
+.alerts-table{
+	position: absolute;
+	right: 2%;
+	height: 28%;
+	overflow-y: scroll;
+	display: block;
+}
+
+.alarms-table{
+	top: 6.5%;
+}
+
+.warnings-table{
+	top: 40.5%;
+}
+
+.details-table{
+	position: absolute;
+	top: 74%;
+	left: 3%;
+	overflow-y: scroll;
+	display: block;
+	height: 25%;
+}
+
+h1{
+	font-size: 20px;
+	font-family: Candara;
+	font-weight: bold;
+	position: absolute;
+	left: 7%;
+}
+
+#alarms-h1{
+	color: red;
+	top: 0.5%;
+}
+
+
+#warnings-h1{
 	color: orange;
+	top: 34%;
 }
 
-.isActive{
-
+#details-h1{
 	color: green;
+	top: 68%;
 }
 
-.area{
-	/* background-image: url("../../imgs/back.jpg"); */
+
+.tables-header{
+	font-family: Candara;
+}
+
+th, td {
+    border-bottom: 1px solid #ddd;
+} 
+th{
+	border-right: 1px solid #ddd;
+	padding-left: 7px;
+	padding-right: 7px;
+}
+
+
+.alarms-panel{
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.details-header{
+	padding-left: 17px;
+	padding-right: 17px;
+}
+
+.bottom-logo{
+	width: 84.5px;
+	height: 36.5px;
+	position: absolute;
+	left: 2%;
+	top: 15%;
 }
