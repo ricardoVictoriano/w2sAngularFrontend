@@ -63,12 +63,7 @@ html, body {
 	height: 100%;
   }
 
-.itens{
-	text-align: left;
-	left:75;
-	position: absolute;
-	top: 0px;
-}
+
 
 .item{
 	list-style-type: none;
@@ -133,18 +128,18 @@ h1{
 }
 
 #alarms-h1{
-	color: red;
+	color: #3EB1E6;
 	top: 0.5%;
 }
 
 
 #warnings-h1{
-	color: orange;
+	color: #3EB1E6;
 	top: 34%;
 }
 
 #details-h1{
-	color: green;
+	color: #3EB1E6;
 	top: 68%;
 }
 
@@ -179,4 +174,41 @@ th{
 	position: absolute;
 	left: 2%;
 	top: 15%;
+}
+
+h2{
+	font-family: Century Gothic;
+	font-size: 20px;
+	color: #3EB1E6;
+	position: absolute;
+	top: 2%;
+	left: 10%;
+}
+
+.itens{
+	position: absolute;
+	top: 10%;
+}
+li{
+	color: #3EB1E6;
+}
+
+h3{
+	color: blue;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+	position: absolute;
+	right: 11%;
+	top: 45%;
+
+}
+
+.link-mailto{
+	position: absolute;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+	right: 2%;
+	top: 42%;
+
+
 }
