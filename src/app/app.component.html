@@ -40,6 +40,7 @@
 
   <div class="alerts-panel shadow">
 
+
     <div class="alarms-panel">
       <h1 id="alarms-h1">ALARMS</h1>
 
@@ -141,39 +142,14 @@
           <tr>
             <th class="details-header" scope="col">ID</th>
             <th class="details-header" scope="col">Asset</th>
-            <th class="details-header" scope="col">Description</th>
+            <th class="details-header" scope="col">Level</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
+          <tr *ngFor="let res of reservoirs">
+            <td>{{res.id}}</td>
+            <td>{{res.designation}}</td>
+            <td id="asset-level">{{res.level}} ({{res.level*100/res.capacity}}%)</td>
           </tr>
         </tbody>
       </table>
@@ -183,6 +159,8 @@
 
   </div>
 
+
+
   <div class="footer-panel">
     <img src="../assets/imgs/logo.png" class="bottom-logo" alt="">
 
@@ -190,6 +168,7 @@
     <a class="link-mailto" href="mailto:info@waterwise.pt">info@waterwise.pt</a>
 
   </div>
+
 
 
 

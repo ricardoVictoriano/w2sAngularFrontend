@@ -1,74 +1,97 @@
-import { Component } from '@angular/core';
-import { NgForm } from "@angular/forms";
-
+import { Component, Injectable, OnInit } from '@angular/core';
+import { Reservoir } from "./reservoir/model/reservoir";
+import { Http, Response } from "@angular/http";
+import { map } from 'rxjs/operators';
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { Observable } from "rxjs";
+//var resers ;
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
+
+
 export class AppComponent {
-  title = 'demoProject';
-  firstName: string = "RICARDO";
-  lastName: string = "VICTORIANO";
-  city = 'LISBON';
-  address = 'Av. dos Bons Amigos, 29';
-  radioStatus: boolean;
-  clickCount: number = 1;
-  mouseOverCount: number = 1;
-  keyPressedCount: number = 1;
-  posts: object[];
-  user = {
-    userName: "",
-    senha: ""
-  }
+  reservoirs: any;
+  apiUrl: string = 'http://localhost:8080/reservoirs';
 
-  constructor() {
+  constructor(private http: HttpClient) {
+    this.http.get(this.apiUrl).subscribe(data => {
+      this.reservoirs = data;
+    });
 
-    this.getRadioStatus();
-    this.posts = [
-      { postTitle: 'Post 1' },
-      { postTitle: 'Post 2' },
-      { postTitle: 'Post 3' },
-      { postTitle: 'Post 4' },
-      { postTitle: 'Post 5' },
-      { postTitle: 'Post 6' },
-      { postTitle: 'Post 7' },
-      { postTitle: 'Post 8' },
-      { postTitle: 'Post 9' },
-      { postTitle: 'Post 10' },
-    ];
-  }
-
-  getRadioStatus() {
-    this.radioStatus = true;
-  }
+    // this.try();
 
 
-  multiply(n1: number, n2: number) {
-    return n1 * n2;
-  }
 
-  buttonClicked() {
-    //alert("Você clicou!!!");
-    console.log(`You've clicked ${this.clickCount++} time(s)`);
-  }
-
-  mousingOver() {
-    console.log(`You've passed here ${this.mouseOverCount++} time(s)`);
-  }
-
-  keyPressing() {
-    console.log(`You've pressed ${this.keyPressedCount++} key(s)`);
 
   }
 
-  onSubmit(formulario: NgForm) {
-    this.user.userName = formulario.value.username;
-    this.user.senha = formulario.value.password;
-    console.log(this.user);
+  // async try() {
+  //   await sleep(1000);
+  //   this.prints();
+  //   this.r1 = this.reservoirs[1];
+  // }
 
-    //console.log(`Username introduzido: ${this.user.userName}\n Senha introduzida: ${this.user.senha}`);
 
+
+
+  // gets(){
+  //   return this.http.get(this.apiUrl).subscribe(data => {
+  //     this.reservoirs = data;
+  //   });
+  // }
+
+  // prints(){
+  //   console.log(this.reservoirs);
+  // }
+
+
+  changeLevels() {
+    this.reservoirs[0].level = Math.floor(Math.random() * (4000 - 1500 + 1)) + 500;
+    this.reservoirs[1].level = Math.floor(Math.random() * (4000 - 1500 + 1)) + 500;
+    this.reservoirs[2].level = Math.floor(Math.random() * (4000 - 1500 + 1)) + 500;
+    this.reservoirs[3].level = Math.floor(Math.random() * (4000 - 1500 + 1)) + 500;
   }
+
+
+
+  // async try() {
+  //   await sleep(1000);
+
+  //   while (true) {
+  //     let lastLevels: number[];
+  //     for (let k = 0; k < this.reservoirs.length; k++) {
+  //       lastLevels = this.reservoirs[k].level;
+  //     }
+  //     await sleep(3000);
+  //     this.changeLevels();
+
+  //     for (let i = 0; i < this.reservoirs.length; i++) {
+  //       this.reservoirs[i].level = Math.floor(Math.random() * (4000 - 1500 + 1)) + 500;
+  //       if (this.reservoirs[i].level < lastLevels[i]) {
+  //         document.getElementById("asset-level").style.color = "red";
+  //       }
+  //       else if (this.reservoirs[i].level > lastLevels[i]) {
+  //         document.getElementById("asset-level").style.color = "green";
+  //       }
+  //       lastLevels[i] = this.reservoirs[i].level;
+
+  //     }
+  //   }
+
+  // }
+
+
+
+
+}
+
+function sleep(ms = 0) {
+
+  return new Promise(r => setTimeout(r, ms));
+
 }
 
