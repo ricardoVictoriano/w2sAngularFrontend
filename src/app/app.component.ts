@@ -1,10 +1,7 @@
-import { Component, Injectable, OnInit } from '@angular/core';
-import { Reservoir } from "./reservoir/model/reservoir";
-import { Http, Response } from "@angular/http";
-import { map } from 'rxjs/operators';
-import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Observable } from "rxjs";
-//var resers ;
+import { Component } from '@angular/core';
+import { HttpClient } from "@angular/common/http";
+import { AgmCoreModule } from "@agm/core";
+import { Reservoir } from './reservoir/model/reservoir';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -15,25 +12,34 @@ import { Observable } from "rxjs";
 
 export class AppComponent {
   reservoirs: any;
+  map;
   apiUrl: string = 'http://localhost:8080/reservoirs';
+  lat: number = 38.753367;
+  lng: number = -9.144698;
 
   constructor(private http: HttpClient) {
     this.http.get(this.apiUrl).subscribe(data => {
       this.reservoirs = data;
     });
 
-    // this.try();
-
-
-
-
+    this.try();
   }
 
-  // async try() {
-  //   await sleep(1000);
-  //   this.prints();
-  //   this.r1 = this.reservoirs[1];
-  // }
+  retAlerts(r: Reservoir) {
+    let date: Date = new Date();
+    let log: string = r.logs[501];
+    // console.log(log.substr(14,14));
+    date.setHours(+log.substr(22,2) as number);
+    date.setMinutes(+log.substr(24,2) as number);
+    date.setSeconds(+log.substr(26,2) as number);
+    console.log(date.toLocaleString());
+  }
+
+  async try() {
+    await sleep(500);
+    this.prints();
+    this.retAlerts(this.reservoirs[2]);
+  }
 
 
 
@@ -44,17 +50,11 @@ export class AppComponent {
   //   });
   // }
 
-  // prints(){
-  //   console.log(this.reservoirs);
-  // }
-
-
-  changeLevels() {
-    this.reservoirs[0].level = Math.floor(Math.random() * (4000 - 1500 + 1)) + 500;
-    this.reservoirs[1].level = Math.floor(Math.random() * (4000 - 1500 + 1)) + 500;
-    this.reservoirs[2].level = Math.floor(Math.random() * (4000 - 1500 + 1)) + 500;
-    this.reservoirs[3].level = Math.floor(Math.random() * (4000 - 1500 + 1)) + 500;
+  prints() {
+    console.log(this.reservoirs);
+    // console.log(this.reservoirs[2].id);
   }
+
 
 
 

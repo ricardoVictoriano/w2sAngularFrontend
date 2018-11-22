@@ -6,6 +6,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { HttpClientModule } from "@angular/common/http";
 import { ReservoirComponent } from './reservoir/reservoir.component';
 import { HttpModule } from "@angular/http";
+import { AgmCoreModule } from "@agm/core";
 
 const appRoutes: Routes = [
  // { path: '', component: HomeComponent },
@@ -22,7 +23,11 @@ const appRoutes: Routes = [
     FormsModule,
     RouterModule.forRoot(appRoutes),
     HttpModule,
-    HttpClientModule
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBH64wu9vaz2LptRnAnoDCBYQ9zANKIf8k'
+    })
+
   ],
   providers: [],
   bootstrap: [AppComponent]

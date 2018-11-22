@@ -66,7 +66,7 @@ html, body {
 
 
 .item{
-	list-style-type: none;
+	/* list-style-type: none; */
 	/* left: 75%; */
 	/* position: absolute  */
 }
@@ -96,17 +96,17 @@ html, body {
 
 
 .alerts-table{
-	position: relative;
-	left: 0px;
-	height: 25%;
+	position: absolute;
+	right: 0%;
+	left: 1%;
+	height: 30%;
 	overflow-y: scroll;
 	display: block;
 	border-radius: 15px;
-	width: 100%;
 }
 
 .alarms-table{
-	top: 6.5%;
+	top: 5%;
 }
 
 .warnings-table{
@@ -114,13 +114,13 @@ html, body {
 }
 
 .details-table{
-	position: relative;
-	top: 74%;
+	position: absolute;
+	top: 77%;
 	width: 100%;
-	left: 3%;
+	left: 1%;
 	overflow-y: scroll;
 	display: block;
-	height: 25%;
+	height: 22%;
 	border-radius: 15px;
 }
 
@@ -129,7 +129,7 @@ h1{
 	font-family: Candara;
 	font-weight: bold;
 	position: absolute;
-	left: 7%;
+	left: 2%;
 }
 
 #alarms-h1{
@@ -140,12 +140,12 @@ h1{
 
 #warnings-h1{
 	color: #3EB1E6;
-	top: 34%;
+	top: 36%;
 }
 
 #details-h1{
 	color: #3EB1E6;
-	top: 68%;
+	top: 72%;
 }
 
 
@@ -159,8 +159,7 @@ th, td {
 } 
 th{
 	border-right: 1px solid #ddd;
-	padding-left: 7px;
-	padding-right: 7px;
+	padding: 0 17px;
 }
 
 
@@ -170,8 +169,7 @@ th{
 }
 
 .details-header{
-	padding-left: 17px;
-	padding-right: 17px;
+	padding: 0 35px;
 }
 
 .bottom-logo{
@@ -204,7 +202,7 @@ h3{
 	font-size: 80%;
 	font-family: Arial, Helvetica, sans-serif;
 	position: absolute;
-	right: 1%;
+	right: 11%;
 	top: 45%;
 }
 
@@ -233,3 +231,7 @@ th{
 #asset-level{
 	color: #3EB1E6;
 }
+
+agm-map {
+	height: 100%;
+  }
