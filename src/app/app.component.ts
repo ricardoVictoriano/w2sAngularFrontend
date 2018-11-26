@@ -3,25 +3,29 @@ import { HttpClient } from "@angular/common/http";
 import { AgmCoreModule } from "@agm/core";
 import { Reservoir } from './reservoir/model/reservoir';
 import { Message } from "./message/model/message.model";
-import * as Collections from 'typescript-collections';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
+
+
 
 
 
 export class AppComponent {
   reservoirs: any;
   map;
+  markerIconUrl = '../assets/imgs/pin.png';
+  mapZoom = 14;
   apiUrl: string = 'http://localhost:8080/reservoirs';
-  lat: number = 38.753367;
-  lng: number = -9.144698;
+  lat: number = 41.126663;
+  lng: number = -8.636477;
   msgIndex: number = 0;
   alarms: Array<Message> = [];
   warnings: Array<Message> = [];
+
 
 
   retLevelByIndex(index: number, r: Reservoir) {
@@ -62,6 +66,12 @@ export class AppComponent {
 
   }
 
+  async print() {
+    await sleep(500);
+    console.log(" ["+this.reservoirs[0].lat+", "+this.reservoirs[0].lon+"] ");
+
+  }
+
   constructor(private http: HttpClient) {
 
 
@@ -71,6 +81,11 @@ export class AppComponent {
     });
 
     this.change();
+
+    this.print();
+
+
+
   }
 
 

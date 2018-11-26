@@ -21,22 +21,20 @@
 
   <div class="left-side-menu shadow">
 
-    <h2 id="water-assets-h2">Water Assets</h2>
+    <button class="btn-waterAssets"><span class="icon"></span>Water Assets</button>
+    <div class="assetsContainer">
+      <button class="botao btnReservoirs">Reservoirs</button>
+      <button class="botao btnPumpingStations">Pumping Stations</button>
+    </div>
 
-    <ul class="itens">
-      <li>
-        <a href="" class="reservoirs">Reservoirs</a>
-      </li>
-      <li>
-        <a href="" class="pumping-stations">Pumping Stations</a>
-      </li>
 
-    </ul>
+
   </div>
 
   <div class="map-panel shadow">
-    <agm-map [latitude]="lat" [longitude]="lng">
-      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="mapZoom">
+
+      <agm-marker [iconUrl]="markerIconUrl" [latitude]="lat" [longitude]="lng"></agm-marker>
     </agm-map>
 
   </div>
@@ -56,35 +54,10 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td></td>
-            <td>Mark</td>
-            <td>Otto</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
+          <tr *ngFor="let al of alarms">
+            <td class="msg alarm-red">{{al.timestamp}}</td>
+            <td class="msg alarm-red">{{al.reservoirId}}</td>
+            <td class="msg alarm-red">{{al.content}}</td>
           </tr>
         </tbody>
       </table>
@@ -103,35 +76,10 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
+          <tr *ngFor="let war of warnings">
+            <td class="msg warning-orange">{{war.timestamp}}</td>
+            <td class="msg warning-orange">{{war.reservoirId}}</td>
+            <td class="msg warning-orange">{{war.content}}</td>
           </tr>
         </tbody>
       </table>

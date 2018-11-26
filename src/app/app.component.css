@@ -63,13 +63,21 @@ html, body {
 	height: 100%;
   }
 
+.msg{
+	  font-size: 11px;
+  }
 
 
-.item{
-	/* list-style-type: none; */
-	/* left: 75%; */
-	/* position: absolute  */
+.alarm-red{
+	color: red
 }
+
+.warning-orange{
+	color: orange;
+
+}
+
+
 
 .alerts-panel{
 	text-align: center;
@@ -180,7 +188,54 @@ th{
 	top: 15%;
 }
 
-h2{
+.btn-waterAssets{
+	position: absolute;
+	top: 5%;
+	width: 100%;
+	background: white;
+	border: none;
+	color: #3EB1E6;
+	font-family: Century Gothic;
+	font-size: 22px;
+	padding: 5px;
+}
+
+.icon{
+	position: relative;
+	background: url(../assets/imgs/waterDrop2.png) no-repeat;
+    float: left;
+    width: 32px;
+	height: 32px;
+	left: 12px;
+
+}
+
+
+.assetsContainer{
+	position: absolute;
+	top: 15%;
+	width: 100%;
+}
+
+.botao{
+	width: 100%;
+	background: white;
+	color: #3EB1E6;
+	border: none;
+	font-family: Century Gothic;
+	font-size: 17px;
+	cursor: pointer;
+	/* outline: none; */
+	transition: 1s;
+}
+
+.botao:hover{
+	background: #3EB1E6;
+	color: whitesmoke;
+}
+
+
+/* h2{
 	font-family: Century Gothic;
 	font-size: 20px;
 	color: #3EB1E6;
@@ -189,10 +244,16 @@ h2{
 	left: 10%;
 }
 
-.itens{
+h2:hover{
+	cursor: pointer;
+} */
+
+/* .itens{
 	position: absolute;
 	top: 10%;
-}
+} */
+
+
 li{
 	color: #3EB1E6;
 }

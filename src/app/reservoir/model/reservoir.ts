@@ -14,7 +14,7 @@ export class Reservoir {
     constructor(){
     }
 
-    toString() {
+    printReservoir() {
         return "Reservoir id: " + this.id + "\nDesignation: " + this.designation + "\nCapacity: " + this.capacity + "\nLevel: " + this.level + " (" + this.level * 100 / this.capacity + "%)\nChlorine: " + this.chlorine + "\nPh: " + this.ph + "\nLocation: (" + this.lat + ", " + this.lon + ") ";
     }
 
