@@ -7,6 +7,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { ReservoirComponent } from './reservoir/reservoir.component';
 import { HttpModule } from "@angular/http";
 import { AgmCoreModule } from "@agm/core";
+import { MessageComponent } from './message/message.component';
 
 const appRoutes: Routes = [
  // { path: '', component: HomeComponent },
@@ -16,7 +17,8 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    ReservoirComponent
+    ReservoirComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,
