@@ -19,19 +19,36 @@
     </nav>
   </div>
 
-  <div class="left-side-menu shadow">
+  <div id="assetsDiv" class="left-side-menu shadow">
 
-    <button class="btn-waterAssets"><span class="icon"></span>Water Assets</button>
-    <div class="assetsContainer">
-      <button class="botao btnReservoirs">Reservoirs</button>
-      <button class="botao btnPumpingStations">Pumping Stations</button>
+
+    <button id="btnCloseLeft" class="closeAssetsDiv" (click)="closeAssetsDiv()"></button>
+    <button id="btnOpenLeft" class="" (click)="openAssetsDiv()"></button>
+
+    <div id="assetsDivInside">
+      <button class="btn-waterAssets"><span class="icon"></span>Water Assets</button>
+      <div class="assetsContainer">
+        <button class="botao btnReservoirs">Reservoirs</button>
+        <button class="botao btnPumpingStations">Pumping Stations</button>
+
+      </div>
+
+
     </div>
 
 
 
   </div>
 
-  <div class="map-panel shadow">
+  <div id="mainDiv" class="map-panel shadow">
+
+    <button id="btnPop" (click)="pop()">Pop</button>
+    
+
+      <button id="btnCollapse" (click)="enlarge()"></button>
+
+
+ 
     <agm-map [latitude]="lat" [longitude]="lng" [zoom]="mapZoom">
 
       <agm-marker [iconUrl]="markerIconUrl" [latitude]="lat" [longitude]="lng"></agm-marker>
@@ -39,72 +56,83 @@
 
   </div>
 
-  <div class="alerts-panel shadow">
+  <div id="rightAllDiv" class="alerts-panel shadow">
+
+    <button id="btnCloseRight" (click)="closeRight()"></button>
+    <button id="btnOpenRight" (click)="openRight()"></button>
+
+    <div id="alertsPanelInside">
+
+      <div class="alarms-panel">
 
 
-    <div class="alarms-panel">
-      <h1 id="alarms-h1">ALARMS</h1>
+        <h1 id="alarms-h1">ALARMS</h1>
 
-      <table class="alarms-table alerts-table shadow">
-        <thead class="tables-header">
-          <tr>
-            <th scope="col">Timestamp</th>
-            <th scope="col">Asset</th>
-            <th scope="col">Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let al of alarms">
-            <td class="msg alarm-red">{{al.timestamp}}</td>
-            <td class="msg alarm-red">{{al.reservoirId}}</td>
-            <td class="msg alarm-red">{{al.content}}</td>
-          </tr>
-        </tbody>
-      </table>
+        <table class="alarms-table alerts-table shadow">
+          <thead class="tables-header">
+            <tr>
+              <th scope="col">Timestamp</th>
+              <th scope="col">Asset</th>
+              <th scope="col">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let al of alarms">
+              <td class="msg alarm-red">{{al.timestamp}}</td>
+              <td class="msg alarm-red">{{al.reservoirId}}</td>
+              <td class="msg alarm-red">{{al.content}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+      <div class="warnings-panel">
+        <h1 id="warnings-h1">WARNINGS</h1>
+
+        <table class="warnings-table alerts-table shadow">
+          <thead class="tables-header">
+            <tr>
+              <th scope="col">Timestamp</th>
+              <th scope="col">Asset</th>
+              <th scope="col">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let war of warnings">
+              <td class="msg warning-orange">{{war.timestamp}}</td>
+              <td class="msg warning-orange">{{war.reservoirId}}</td>
+              <td class="msg warning-orange">{{war.content}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="details-panel alets-panel">
+        <h1 id="details-h1">DETAILS</h1>
+
+        <table class="details-table">
+          <thead class="tables-header">
+            <tr>
+              <th class="details-header" scope="col">ID</th>
+              <th class="details-header" scope="col">Asset</th>
+              <th class="details-header" scope="col">Level</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let res of reservoirs">
+              <td>{{res.id}}</td>
+              <td>{{res.designation}}</td>
+              <td id="asset-level">{{res.level}} ({{res.level*100/res.capacity}}%)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+
     </div>
 
-
-    <div class="warnings-panel">
-      <h1 id="warnings-h1">WARNINGS</h1>
-
-      <table class="warnings-table alerts-table shadow">
-        <thead class="tables-header">
-          <tr>
-            <th scope="col">Timestamp</th>
-            <th scope="col">Asset</th>
-            <th scope="col">Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let war of warnings">
-            <td class="msg warning-orange">{{war.timestamp}}</td>
-            <td class="msg warning-orange">{{war.reservoirId}}</td>
-            <td class="msg warning-orange">{{war.content}}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="details-panel alets-panel">
-      <h1 id="details-h1">DETAILS</h1>
-
-      <table class="details-table">
-        <thead class="tables-header">
-          <tr>
-            <th class="details-header" scope="col">ID</th>
-            <th class="details-header" scope="col">Asset</th>
-            <th class="details-header" scope="col">Level</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let res of reservoirs">
-            <td>{{res.id}}</td>
-            <td>{{res.designation}}</td>
-            <td id="asset-level">{{res.level}} ({{res.level*100/res.capacity}}%)</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
 
 
 

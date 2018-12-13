@@ -15,6 +15,7 @@ import { Message } from "./message/model/message.model";
 
 
 export class AppComponent {
+  mainLastSize = "";
   reservoirs: any;
   map;
   markerIconUrl = '../assets/imgs/pin.png';
@@ -68,7 +69,7 @@ export class AppComponent {
 
   async print() {
     await sleep(500);
-    console.log(" ["+this.reservoirs[0].lat+", "+this.reservoirs[0].lon+"] ");
+    console.log(" [" + this.reservoirs[0].lat + ", " + this.reservoirs[0].lon + "] ");
 
   }
 
@@ -97,6 +98,249 @@ export class AppComponent {
     return l;
 
   }
+
+  closeAssetsDiv() {
+
+    var assetsMenu = document.getElementById("assetsDivInside");
+    assetsMenu.style.display = "none";
+
+
+    var mainDiv = document.getElementById("mainDiv");
+    mainDiv.style.left = "2%";
+
+    if (mainDiv.style.width == "82.5%") {
+      mainDiv.style.width = "96%";
+      this.mainLastSize = mainDiv.style.width;
+    }
+    else {
+      mainDiv.style.width = "74.5%";
+      this.mainLastSize = mainDiv.style.width;
+    }
+
+
+
+    var botCollapse = document.getElementById("btnCloseLeft");
+    botCollapse.style.display = "none";
+
+    var botOpen = document.getElementById("btnOpenLeft");
+    botOpen.style.display = "grid";
+  }
+
+  openAssetsDiv() {
+
+    var assetsMenu = document.getElementById("assetsDivInside");
+    assetsMenu.style.display = "block";
+
+
+    var mainDiv = document.getElementById("mainDiv");
+    mainDiv.style.left = "15.5%";
+
+
+    if (mainDiv.style.width == "96%") {
+      mainDiv.style.width = "82.5%";
+      this.mainLastSize = mainDiv.style.width;
+    }
+    else {
+      mainDiv.style.width = "61%";
+      this.mainLastSize = mainDiv.style.width;
+    }
+
+
+    var botCollapse = document.getElementById("btnCloseLeft");
+    botCollapse.style.display = "grid";
+
+    var botOpen = document.getElementById("btnOpenLeft");
+    botOpen.style.display = "none";
+  }
+
+
+  closeRight() {
+
+    var rightDiv = document.getElementById("alertsPanelInside");
+
+    rightDiv.style.display = "none";
+
+    var rightAllDiv = document.getElementById("rightAllDiv");
+    rightAllDiv.style.width = "2%";
+    rightAllDiv.style.zIndex = "0";
+    rightAllDiv.style.height = "auto";
+    rightAllDiv.style.bottom = "10%";
+    rightAllDiv.style.top = "10%";
+
+
+    var md = document.getElementById("mainDiv");
+    md.style.right = "2%";
+
+    if (md.style.width == "74.5%") {
+      // alert("yes");
+      md.style.width = "96%";
+      this.mainLastSize = md.style.width;
+    }
+    else {
+      // alert("no");
+      md.style.width = "82.5%";
+      this.mainLastSize = md.style.width;
+    }
+
+    // alert(md.style.width);
+
+    var btnOpenRight = document.getElementById("btnOpenRight");
+    btnOpenRight.style.display = "block";
+    btnOpenRight.style.background = "url('../assets/imgs/left.png') no-repeat";
+
+    var btnCloseRight = document.getElementById("btnCloseRight");
+    btnCloseRight.style.display = "none";
+  }
+
+
+
+  openRight() {
+    var right = document.getElementById("rightAllDiv");
+
+    if (right.style.width == "2%") {
+      var btOp = document.getElementById("btnOpenRight");
+      btOp.style.background = "url('../assets/imgs/enlarge.png') no-repeat";
+      // btOp.style.display = "none";
+
+      var btCl = document.getElementById("btnCloseRight");
+      btCl.style.display = "grid";
+
+
+      right.style.display = "block";
+      right.style.width = "23%";
+      right.style.zIndex = "0";
+      right.style.height = "auto";
+      right.style.bottom = "10%";
+      right.style.top = "10%";
+
+      var rightDivInside = document.getElementById("alertsPanelInside");
+      rightDivInside.style.display = "block";
+
+      var main = document.getElementById("mainDiv");
+      // alert(main.style.width);
+      if (main.style.width == "82.5%") {
+        main.style.width = "61%";
+        this.mainLastSize = main.style.width;
+      }
+      else {
+        main.style.width = "74.5%";
+        this.mainLastSize = main.style.width;
+      }
+    }
+    else {
+
+      if (right.style.width == "100%") {
+        var btnClose = document.getElementById("btnCloseRight");
+        var btn = document.getElementById("btnOpenRight");
+        btn.style.background = "url('../assets/imgs/enlarge.png') no-repeat";
+        btnClose.style.display = "grid";
+        right.style.width = "23%";
+        right.style.zIndex = "0";
+        right.style.height = "auto";
+        right.style.bottom = "10%";
+        right.style.top = "10%";
+
+      }
+      else {
+        var btn = document.getElementById("btnOpenRight");
+        var btnClose = document.getElementById("btnCloseRight");
+        btnClose.style.display = "none";
+        btn.style.background = "url('../assets/imgs/minimize.png') no-repeat";
+        right.style.width = "100%";
+        right.style.height = "100%";
+        right.style.zIndex = "8000";
+        right.style.background = "white";
+        right.style.top = "0";
+        right.style.bottom = "0";
+
+      }
+    }
+  }
+
+
+  pop() {
+
+    var mainDiv = document.getElementById("mainDiv").outerHTML;
+
+    window.open("localhost:4200");
+
+  }
+
+
+
+
+  enlarge() {
+
+    var main = document.getElementById("mainDiv");
+    var btnColapse = document.getElementById("btnCollapse");
+    // alert(this.mainLastSize);
+
+
+
+    if (main.style.width == "100%") {
+
+      if (this.mainLastSize == "61%" || this.mainLastSize == "undefined" || this.mainLastSize == "") {
+        main.style.width = "61%";
+        main.style.top = "10%";
+        main.style.height = "auto";
+        main.style.bottom = "10%";
+        main.style.left = "15.5%";
+        main.style.right = "23%";
+        btnColapse.style.background = "url('../assets/imgs/enlarge.png') no-repeat";
+
+      }
+
+      if (this.mainLastSize == "96%") {
+        main.style.width = "96%";
+        main.style.top = "10%";
+        main.style.height = "auto";
+        main.style.bottom = "10%";
+        main.style.left = "2%";
+        main.style.right = "2%";
+        btnColapse.style.background = "url('../assets/imgs/enlarge.png') no-repeat";
+      }
+      else {
+        if (this.mainLastSize == "82.5%") {
+          main.style.width = "82.5%";
+          main.style.top = "10%";
+          main.style.height = "auto";
+          main.style.bottom = "10%";
+          main.style.left = "15.5%";
+          main.style.right = "2%";
+          btnColapse.style.background = "url('../assets/imgs/enlarge.png') no-repeat";
+        }
+        else {
+          if (this.mainLastSize == "74.5%") {
+            main.style.width = "74.5%";
+            main.style.top = "10%";
+            main.style.height = "auto";
+            main.style.bottom = "10%";
+            main.style.left = "2%";
+            main.style.right = "23%";
+            btnColapse.style.background = "url('../assets/imgs/enlarge.png') no-repeat";
+          }
+
+        }
+      }
+
+
+    }
+    else {
+
+
+      main.style.width = "100%";
+      main.style.height = "100%";
+      main.style.top = "0";
+      main.style.right = "0";
+      main.style.left = "0";
+      main.style.bottom = "0";
+      main.style.zIndex = "50";
+      btnColapse.style.background = "url('../assets/imgs/minimize.png') no-repeat";
+
+    }
+
+  }
+
 
 
 

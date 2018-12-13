@@ -1,5 +1,6 @@
 
 #page{
+	position: relative;
 	width:100%;
     text-align:center;
 }
@@ -10,12 +11,34 @@
 
 #navbarTogglerDemo01{
 	
-	z-index: 1000;
+	/* z-index: 1000; */
 	
 }
 
 .img-logo:hover{
 	cursor: pointer;
+}
+
+.closeAssetsDiv{
+	position: absolute;
+	cursor: pointer;
+	right: 2%;
+	width: 24px;
+	height: 24px;
+	background: url("../assets/imgs/left.png") no-repeat;
+	border: none;
+}
+
+#btnOpenLeft{
+	cursor: pointer;
+	display: none;
+	width: 24px;
+	height: 24px;
+	position: absolute;
+	left: 2%;
+	background: url("../assets/imgs/right.png") no-repeat;
+	border: none;
+	
 }
 
 .nav-button{
@@ -27,6 +50,7 @@
 	padding: 3px 20px 5px 20px;
 	margin-left: 20px;
 	font-family: Candara;
+	transition: 0.5s;
 }
 
 .nav-button:hover{
@@ -39,6 +63,8 @@
 	margin-left: 50px;
 }
 
+
+
 .left-side-menu{
 	text-align: lef;
 	position: fixed;
@@ -47,15 +73,76 @@
 	/* background: yellowgreen; */
 	top: 10%;
 	bottom: 10%;
+	transition: 0.7s;
+}
+
+#btnPop{
+	border: none;
+	color: orangered;
+	position: absolute;
+	font-size: 20px;
+	background: none;
+	z-index: 5000;
+	cursor: pointer;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#alertsPanelInside{
+	transition: 0.7s;
+	/* display: none; */
+}
+
+#btnOpenRight{
+	cursor: pointer;
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	background: url("../assets/imgs/enlarge.png") no-repeat;
+	border: none;
+	right: 0;
+	/* display: none; */
+}
+
+#btnCloseRight{
+	cursor: pointer;
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	left: 2%;
+	background: url("../assets/imgs/right.png") no-repeat;
+	border: none;
+}
+
+.alerts-panelInside{
+	/* position: absolute;
+	top: 100px; */
+}
+
+.divDtns{
+	position: absolute;
+	top: 10%;
+	right: 20%;
+}
+
+#btnCollapse{
+	cursor: pointer;
+	border: none;
+	background: url("../assets/imgs/enlarge.png");
+	position: absolute;
+	width: 26px;
+	height: 26px;
+	top: 0%;
+	right: 0%;
+	z-index: 100;
 }
 
 .map-panel{
-	
 	position: fixed;
 	width: 61%;
     top: 10%;
 	bottom: 10%;
 	left: 15.5%;
+	transition: 0.7s;
 	/* background:blueviolet; */
 
 }
@@ -88,6 +175,7 @@ html, body {
 	top: 10%;
 	bottom: 10%;
 	z-index: 1;
+	transition: 0.7s;
 }
 
 
@@ -107,18 +195,18 @@ html, body {
 	position: absolute;
 	right: 0%;
 	left: 1%;
-	height: 30%;
+	height: 28%;
 	overflow-y: scroll;
 	display: block;
 	border-radius: 15px;
 }
 
 .alarms-table{
-	top: 5%;
+	top: 10%;
 }
 
 .warnings-table{
-	top: 40.5%;
+	top: 43%;
 }
 
 .details-table{
@@ -142,13 +230,13 @@ h1{
 
 #alarms-h1{
 	color: #3EB1E6;
-	top: 0.5%;
+	top: 5%;
 }
 
 
 #warnings-h1{
 	color: #3EB1E6;
-	top: 36%;
+	top: 39%;
 }
 
 #details-h1{
