@@ -262,7 +262,7 @@ export class AppComponent {
 
     var mainDiv = document.getElementById("mainDiv").outerHTML;
 
-    window.open("localhost:4200");
+    window.open("http://localhost:4200");
 
   }
 
